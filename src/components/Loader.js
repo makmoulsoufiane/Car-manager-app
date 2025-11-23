@@ -1,4 +1,3 @@
-{
-  this.props.loading;
+export default function Loader() {
+  return <div>Loading...</div>;
 }
-<h2>Chargement...</h2>;

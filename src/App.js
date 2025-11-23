@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { getCars } from "./services/carsApi";
 import CarList from "./components/CarList";
+import Loader from "./components/Loader";
 
 class App extends React.Component {
   state = {
@@ -27,7 +28,7 @@ class App extends React.Component {
       this.state.loading
     );
 
-    return <CarList cars={this.state.cars} loading={this.state.loading} />;
+    return this.state.loading ? <Loader /> : <CarList cars={this.state.cars} />;
   }
 }
 
