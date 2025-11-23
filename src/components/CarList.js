@@ -1,19 +1,18 @@
+// src/components/CarList.js
 import React from "react";
+import CarItem from "./CarItem";
 
 class CarList extends React.Component {
   render() {
+    const { cars } = this.props;
+
     return (
       <>
-        {
-          <ul>
-            {this.props.cars.map((car) => (
-              <li key={car.id}>
-                {car.car} - {car.car_model} - {car.car_color}-{" "}
-                {car.car_model_year} - {car.price} - {car.availability ? "Available" : "Not available"}
-              </li>
-            ))}
-          </ul>
-        }
+
+        {cars.map((car) => (
+          <CarItem key={car.id} car={car} />
+        ))} 
+
       </>
     );
   }
